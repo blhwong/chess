@@ -224,7 +224,62 @@ def listQueenMoves(myChessBoard, color, i, j):
     return
 def listKingMoves(myChessBoard, color, i, j):
     count = 1
-
+    if (i - 1) > -1 and myChessBoard[i-1][j].color != color:                                        #king is in bounds and not blocked by own piece
+        if myChessBoard[i-1][j].piece != '0':                                                       #king takes opposite piece
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move north to take ' + myChessBoard[i-1][j].color + ' ' + myChessBoard[i-1][j].piece + '@' + myChessBoard[i-1][j].square
+            count+=1
+        else:                                                                                       #king moves to empty space north
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move north to ' + myChessBoard[i-1][j].square
+        count+=1
+    if (i - 1) > -1 and (j + 1) < 8 and myChessBoard[i-1][j+1].color != color:                       #king is in bounds and not blocked by own piece
+        if myChessBoard[i-1][j+1].piece != '0':                                                     #king takes opposite piece
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move northeast to take ' + myChessBoard[i-1][j+1].color + ' ' + myChessBoard[i-1][j+1].piece + '@' + myChessBoard[i-1][j+1].square
+            count+=1
+        else:                                                                                       #king moves to empty space northeast
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move northeast to ' + myChessBoard[i-1][j+1].square
+        count+=1
+    if (j + 1) < 8 and myChessBoard[i][j+1].color != color:                                         #king is in bounds and not blocked by own piece
+        if myChessBoard[i][j+1].piece != '0':                                                       #king takes opposite piece
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move east to take ' + myChessBoard[i][j+1].color + ' ' + myChessBoard[i][j+1].piece + '@' + myChessBoard[i][j+1].square
+            count+=1
+        else:                                                                                       #king moves to empty space east
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move east to ' + myChessBoard[i][j+1].square
+        count+=1
+    if (i + 1) < 8 and (j + 1) < 8 and myChessBoard[i+1][j+1].color != color:                       #king is in bounds and not blocked by own piece
+        if myChessBoard[i+1][j+1].piece != '0':                                                     #king takes opposite piece
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move southeast to take ' + myChessBoard[i+1][j+1].color + ' ' + myChessBoard[i+1][j+1].piece + '@' + myChessBoard[i+1][j+1].square
+            count+=1
+        else:                                                                                       #king moves to empty space southeast
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move southeast to ' + myChessBoard[i+1][j+1].square
+        count+=1
+    if (i + 1) < 8 and myChessBoard[i+1][j].color != color:                                         #king is in bounds and not blocked by own piece
+        if myChessBoard[i+1][j].piece != '0':                                                       #king takes opposite piece
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move south to take' + myChessBoard[i+1][j].color + ' ' + myChessBoard[i+1][j].piece + '@' + myChessBoard[i+1][j].square
+            count+=1
+        else:                                                                                       #king moves to empty space south
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move south to ' + myChessBoard[i+1][j].square
+        count+=1
+    if (i + 1) < 8 and (j - 1) > -1 and myChessBoard[i+1][j-1].color != color:                      #king is in bounds and not blocked by own piece
+        if myChessBoard[i+1][j-1].piece != '0':                                                     #king takes opposite piece
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move southwest to take ' + myChessBoard[i+1][j-1].color + ' ' + myChessBoard[i+1][j-1].piece + '@' + myChessBoard[i+1][j-1].square
+            count+=1
+        else:                                                                                       #king moves to empty space southwest
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move southwest to ' + myChessBoard[i+1][j-1].square
+        count+=1
+    if (j - 1) > -1 and myChessBoard[i][j-1].color != color:                                        #king is in bounds and not blocked by own piece
+        if myChessBoard[i][j-1].piece != '0':                                                       #king takes opposite piece
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move west to take ' + myChessBoard[i][j-1].color + ' ' + myChessBoard[i][j-1].piece + '@' + myChessBoard[i][j-1].square
+            count+=1
+        else:                                                                                       #king moves to empty space west
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move west to ' + myChessBoard[i][j-1].square
+        count+=1
+    if (i - 1) > -1 and (j - 1) > -1 and myChessBoard[i-1][j-1].color != color:                     #king is in bounds and not blocked by own piece
+        if myChessBoard[i-1][j-1].piece != '0':                                                     #king takes opposite piece
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move northwest to take ' + myChessBoard[i-1][j-1].color + ' ' + myChessBoard[i-1][j-1].piece + '@' + myChessBoard[i-1][j-1].square
+            count+=1
+        else:                                                                                       #king moves to empty space northwest
+            print str(count) + ': ' + color + ' king@' + myChessBoard[i][j].square + ' move northwest to ' + myChessBoard[i-1][j-1].square
+        count+=1
     return
 def listPawnMoves(myChessBoard, color, i, j):
     count = 1
@@ -251,14 +306,14 @@ def listMoves(myChessBoard, color):
                 listPawnMoves(myChessBoard, color, i, j)
     return
 
-a1 = chessSquare('0','0','a1')
+a1 = chessSquare('king','w','a1')
 a2 = chessSquare('0','0','a2')
 a3 = chessSquare('0','0','a3')
 a4 = chessSquare('0','0','a4')
 a5 = chessSquare('0','0','a5')
 a6 = chessSquare('0','0','a6')
 a7 = chessSquare('0','0','a7')
-a8 = chessSquare('0','0','a8')
+a8 = chessSquare('king','w','a8')
 b1 = chessSquare('0','0','b1')
 b2 = chessSquare('0','0','b2')
 b3 = chessSquare('0','0','b3')
@@ -270,25 +325,25 @@ b8 = chessSquare('0','0','b8')
 c1 = chessSquare('0','0','c1')
 c2 = chessSquare('0','0','c2')
 c3 = chessSquare('0','0','c3')
-c4 = chessSquare('0','0','c4')
-c5 = chessSquare('0','0','c5')
-c6 = chessSquare('0','0','c6')
+c4 = chessSquare('pawn','b','c4')
+c5 = chessSquare('pawn','b','c5')
+c6 = chessSquare('pawn','b','c6')
 c7 = chessSquare('0','0','c7')
 c8 = chessSquare('0','0','c8')
 d1 = chessSquare('0','0','d1')
 d2 = chessSquare('0','0','d2')
 d3 = chessSquare('0','0','d3')
-d4 = chessSquare('0','0','d4')
-d5 = chessSquare('0','0','d5')
-d6 = chessSquare('0','0','d6')
+d4 = chessSquare('pawn','b','d4')
+d5 = chessSquare('king','w','d5')
+d6 = chessSquare('pawn','b','d6')
 d7 = chessSquare('0','0','d7')
 d8 = chessSquare('0','0','d8')
 e1 = chessSquare('0','0','e1')
 e2 = chessSquare('0','0','e2')
 e3 = chessSquare('0','0','e3')
-e4 = chessSquare('0','0','e4')
-e5 = chessSquare('0','0','e5')
-e6 = chessSquare('0','0','e6')
+e4 = chessSquare('pawn','b','e4')
+e5 = chessSquare('pawn','b','e5')
+e6 = chessSquare('pawn','b','e6')
 e7 = chessSquare('0','0','e7')
 e8 = chessSquare('0','0','e8')
 f1 = chessSquare('0','0','f1')
@@ -307,14 +362,14 @@ g5 = chessSquare('0','0','g5')
 g6 = chessSquare('0','0','g6')
 g7 = chessSquare('0','0','g7')
 g8 = chessSquare('0','0','g8')
-h1 = chessSquare('0','0','h1')
+h1 = chessSquare('king','w','h1')
 h2 = chessSquare('0','0','h2')
 h3 = chessSquare('0','0','h3')
 h4 = chessSquare('0','0','h4')
 h5 = chessSquare('0','0','h5')
 h6 = chessSquare('0','0','h6')
 h7 = chessSquare('0','0','h7')
-h8 = chessSquare('0','0','h8')
+h8 = chessSquare('king','w','h8')
 
 myChessBoard=[[a8,b8,c8,d8,e8,f8,g8,h8],
               [a7,b7,c7,d7,e7,f7,g7,h7],

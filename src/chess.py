@@ -50,14 +50,79 @@ def listRookMoves(myChessBoard, color, i, j):
     return
 
 def listKnightMoves(myChessBoard, color, i, j):
+    count = 1
+    if (i + 1) < 8 and (j + 2) < 8 and myChessBoard[i+1][j+2].color != color:                       #knight is in bounds and not blocked by own piece
+        if myChessBoard[i+1][j+2].piece != '0':                                                     #knight takes opposite piece
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' takes ' + myChessBoard[i+1][j+2].color + ' ' + myChessBoard[i+1][j+2].piece + '@' + myChessBoard[i+1][j+2].square
+            count+=1
+        else:                                                                                       #knight moves to empty space
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' move to ' + myChessBoard[i+1][j+2].square
+        count+=1
+    if (i + 2) < 8 and (j + 1) < 8 and myChessBoard[i+2][j+1].color != color:                       #knight is in bounds and not blocked by own piece
+        if myChessBoard[i+2][j+1].piece != '0':                                                     #knight takes opposite piece
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' takes ' + myChessBoard[i+2][j+1].color + ' ' + myChessBoard[i+2][j+1].piece + '@' + myChessBoard[i+2][j+1].square
+            count+=1
+        else:                                                                                       #knight moves to empty space
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' move to ' + myChessBoard[i+2][j+1].square
+        count+=1
+    if (i - 1) > -1 and (j + 2) < 8 and myChessBoard[i-1][j+2].color != color:                      #knight is in bounds and not blocked by own piece
+        if myChessBoard[i-1][j+2].piece != '0':                                                     #knight takes opposite piece
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' takes ' + myChessBoard[i-1][j+2].color + ' ' + myChessBoard[i-1][j+2].piece + '@' + myChessBoard[i-1][j+2].square
+            count+=1
+        else:                                                                                       #knight moves to empty space
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' move to ' + myChessBoard[i-1][j+2].square
+        count+=1
+    if (i + 2) < 8 and (j - 1) > -1 and myChessBoard[i+2][j-1].color != color:                      #knight is in bounds and not blocked by own piece
+        if myChessBoard[i+2][j-1].piece != '0':                                                     #knight takes opposite piece
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' takes ' + myChessBoard[i+2][j-1].color + ' ' + myChessBoard[i+2][j-1].piece + '@' + myChessBoard[i+2][j-1].square
+            count+=1
+        else:                                                                                       #knight moves to empty space
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' move to ' + myChessBoard[i+2][j-1].square
+        count+=1
+    if (i + 1) < 8 and (j - 2) > -1 and myChessBoard[i+1][j-2].color != color:                      #knight is in bounds and not blocked by own piece
+        if myChessBoard[i+1][j-2].piece != '0':                                                     #knight takes opposite piece
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' takes ' + myChessBoard[i+1][j-2].color + ' ' + myChessBoard[i+1][j-2].piece + '@' + myChessBoard[i+1][j-2].square
+            count+=1
+        else:                                                                                       #knight moves to empty space
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' move to ' + myChessBoard[i+1][j-2].square
+        count+=1
+    if (i - 2) > -1 and (j + 1) < 8 and myChessBoard[i-2][j+1].color != color:                      #knight is in bounds and not blocked by own piece
+        if myChessBoard[i-2][j+1].piece != '0':                                                     #knight takes opposite piece
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' takes ' + myChessBoard[i-2][j+1].color + ' ' + myChessBoard[i-2][j+1].piece + '@' + myChessBoard[i-2][j+1].square
+            count+=1
+        else:                                                                                       #knight moves to empty space
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' move to ' + myChessBoard[i-2][j+1].square
+        count+=1
+    if (i - 1) > -1 and (j - 2) > -1 and myChessBoard[i-1][j-2].color != color:                     #knight is in bounds and not blocked by own piece
+        if myChessBoard[i-1][j-2].piece != '0':                                                     #knight takes opposite piece
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' takes ' + myChessBoard[i-1][j-2].color + ' ' + myChessBoard[i-1][j-2].piece + '@' + myChessBoard[i-1][j-2].square
+            count+=1
+        else:                                                                                       #knight moves to empty space
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' move to ' + myChessBoard[i-1][j-2].square
+        count+=1
+    if (i - 2) > -1 and (j - 1) > -1 and myChessBoard[i-2][j-1].color != color:                     #knight is in bounds and not blocked by own piece
+        if myChessBoard[i-2][j-1].piece != '0':                                                     #knight takes opposite piece
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' takes ' + myChessBoard[i-2][j-1].color + ' ' + myChessBoard[i-2][j-1].piece + '@' + myChessBoard[i-2][j-1].square
+            count+=1
+        else:                                                                                       #knight moves to empty space
+            print str(count) + ': ' + color + ' knight@' + myChessBoard[i][j].square + ' move to ' + myChessBoard[i-2][j-1].square
+        count+=1
     return
 def listBishopMoves(myChessBoard, color, i, j):
+    count = 1
+
     return
 def listQueenMoves(myChessBoard, color, i, j):
+    coumt = 1
+
     return
 def listKingMoves(myChessBoard, color, i, j):
+    count = 1
+
     return
 def listPawnMoves(myChessBoard, color, i, j):
+    count = 1
+
     return
 
 def listMoves(myChessBoard, color):
@@ -96,23 +161,23 @@ a8 = chessSquare('0','0','a8')
 b1 = chessSquare('0','0','b1')
 b2 = chessSquare('0','0','b2')
 b3 = chessSquare('0','0','b3')
-b4 = chessSquare('pawn','b','b4')
+b4 = chessSquare('0','0','b4')
 b5 = chessSquare('0','0','b5')
 b6 = chessSquare('0','0','b6')
 b7 = chessSquare('0','0','b7')
 b8 = chessSquare('0','0','b8')
 c1 = chessSquare('0','0','c1')
 c2 = chessSquare('0','0','c2')
-c3 = chessSquare('pawn','b','c3')
-c4 = chessSquare('rook','w','c4')
-c5 = chessSquare('pawn','b','c5')
+c3 = chessSquare('0','0','c3')
+c4 = chessSquare('0','0','c4')
+c5 = chessSquare('0','0','c5')
 c6 = chessSquare('0','0','c6')
 c7 = chessSquare('0','0','c7')
 c8 = chessSquare('0','0','c8')
 d1 = chessSquare('0','0','d1')
 d2 = chessSquare('0','0','d2')
 d3 = chessSquare('0','0','d3')
-d4 = chessSquare('pawn','b','d4')
+d4 = chessSquare('0','0','d4')
 d5 = chessSquare('0','0','d5')
 d6 = chessSquare('0','0','d6')
 d7 = chessSquare('0','0','d7')

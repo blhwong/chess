@@ -12,40 +12,40 @@ class chessSquare:
 def listRookMoves(myChessBoard, color, i, j):
     count = 1
     for a in range(1,8):
-        if (i + a) > 7 or myChessBoard[i+a][j].color == color:                                         #traversing backwards
+        if (i + a) > 7 or myChessBoard[i+a][j].color == color:                                         #traversing south
             break
         if myChessBoard[i+a][j].piece != '0' and myChessBoard[i+a][j].color != color:
-            print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move backwards to take ' + myChessBoard[i+a][j].color + ' ' + myChessBoard[i+a][j].piece + '@' + myChessBoard[i+a][j].square
+            print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move south to take ' + myChessBoard[i+a][j].color + ' ' + myChessBoard[i+a][j].piece + '@' + myChessBoard[i+a][j].square
             count+=1
             break
-        print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move backwards to ' + myChessBoard[i+a][j].square
+        print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move south to ' + myChessBoard[i+a][j].square
         count+=1
     for a in range(1,8):
-        if (i - a) < 0 or myChessBoard[i-a][j].color == color:                                         #traversing forward
+        if (i - a) < 0 or myChessBoard[i-a][j].color == color:                                         #traversing north
             break
         if myChessBoard[i-a][j].piece != '0' and myChessBoard[i-a][j].color != color:
-            print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move forward to take ' + myChessBoard[i-a][j].color + ' ' + myChessBoard[i-a][j].piece + '@' + myChessBoard[i-a][j].square
+            print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move north to take ' + myChessBoard[i-a][j].color + ' ' + myChessBoard[i-a][j].piece + '@' + myChessBoard[i-a][j].square
             count+=1
             break
-        print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move forward to ' + myChessBoard[i-a][j].square
+        print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move north to ' + myChessBoard[i-a][j].square
         count+=1
     for a in range(1,8):
-        if (j + a) > 7 or myChessBoard[i][j+a].color == color:                                         #traversing right
+        if (j + a) > 7 or myChessBoard[i][j+a].color == color:                                         #traversing east
             break
         if myChessBoard[i][j+a].piece != '0' and myChessBoard[i][j+a].color != color:
-            print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move right to take ' + myChessBoard[i][j+a].color + ' ' + myChessBoard[i][j+a].piece + '@' + myChessBoard[i][j+a].square
+            print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move east to take ' + myChessBoard[i][j+a].color + ' ' + myChessBoard[i][j+a].piece + '@' + myChessBoard[i][j+a].square
             count+=1
             break
-        print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move right to ' + myChessBoard[i][j+a].square
+        print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move east to ' + myChessBoard[i][j+a].square
         count+=1
     for a in range (1,8):
-        if (j - a) < 0 or myChessBoard[i][j-a].color == color:                                         #traversing left
+        if (j - a) < 0 or myChessBoard[i][j-a].color == color:                                         #traversing west
             break
         if myChessBoard[i][j-a].piece != '0' and myChessBoard[i][j-a].color != color:
-            print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move left to take ' + myChessBoard[i][j-a].color + ' ' + myChessBoard[i][j-a].piece + '@' + myChessBoard[i][j-a].square
+            print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move west to take ' + myChessBoard[i][j-a].color + ' ' + myChessBoard[i][j-a].piece + '@' + myChessBoard[i][j-a].square
             count+=1
             break
-        print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move left to ' + myChessBoard[i][j-a].square
+        print str(count) + ': ' + color + ' rook@' + myChessBoard[i][j].square + ' move west to ' + myChessBoard[i][j-a].square
         count+=1
     return
 
@@ -148,8 +148,79 @@ def listBishopMoves(myChessBoard, color, i, j):
         count+=1
     return
 def listQueenMoves(myChessBoard, color, i, j):
-    coumt = 1
-
+    count = 1
+    for a in range(1,8):
+        if (i + a) > 7 or myChessBoard[i+a][j].color == color:                                         #traversing south
+            break
+        if myChessBoard[i+a][j].piece != '0' and myChessBoard[i+a][j].color != color:
+            print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move south to take ' + myChessBoard[i+a][j].color + ' ' + myChessBoard[i+a][j].piece + '@' + myChessBoard[i+a][j].square
+            count+=1
+            break
+        print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move south to ' + myChessBoard[i+a][j].square
+        count+=1
+    for a in range(1,8):
+        if (i - a) < 0 or myChessBoard[i-a][j].color == color:                                         #traversing north
+            break
+        if myChessBoard[i-a][j].piece != '0' and myChessBoard[i-a][j].color != color:
+            print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move north to take ' + myChessBoard[i-a][j].color + ' ' + myChessBoard[i-a][j].piece + '@' + myChessBoard[i-a][j].square
+            count+=1
+            break
+        print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move north to ' + myChessBoard[i-a][j].square
+        count+=1
+    for a in range(1,8):
+        if (j + a) > 7 or myChessBoard[i][j+a].color == color:                                         #traversing east
+            break
+        if myChessBoard[i][j+a].piece != '0' and myChessBoard[i][j+a].color != color:
+            print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move east to take ' + myChessBoard[i][j+a].color + ' ' + myChessBoard[i][j+a].piece + '@' + myChessBoard[i][j+a].square
+            count+=1
+            break
+        print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move east to ' + myChessBoard[i][j+a].square
+        count+=1
+    for a in range (1,8):
+        if (j - a) < 0 or myChessBoard[i][j-a].color == color:                                         #traversing west
+            break
+        if myChessBoard[i][j-a].piece != '0' and myChessBoard[i][j-a].color != color:
+            print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move west to take ' + myChessBoard[i][j-a].color + ' ' + myChessBoard[i][j-a].piece + '@' + myChessBoard[i][j-a].square
+            count+=1
+            break
+        print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move west to ' + myChessBoard[i][j-a].square
+        count+=1
+    for a in range(1,8):
+        if (i + a) > 7 or (j + a) > 7 or myChessBoard[i+a][j+a].color == color:                                         #traversing southeast
+            break
+        if myChessBoard[i+a][j+a].piece != '0' and myChessBoard[i+a][j+a].color != color:
+            print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move southeast to take ' + myChessBoard[i+a][j+a].color + ' ' + myChessBoard[i+a][j+a].piece + '@' + myChessBoard[i+a][j+a].square
+            count+=1
+            break
+        print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move southeast to ' + myChessBoard[i+a][j+a].square
+        count+=1
+    for a in range(1,8):
+        if (i - a) < 0 or (j + a) > 7 or myChessBoard[i-a][j+a].color == color:                                         #traversing northeast
+            break
+        if myChessBoard[i-a][j+a].piece != '0' and myChessBoard[i-a][j+a].color != color:
+            print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move northeast to take ' + myChessBoard[i-a][j+a].color + ' ' + myChessBoard[i-a][j+a].piece + '@' + myChessBoard[i-a][j+a].square
+            count+=1
+            break
+        print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move northeast to ' + myChessBoard[i-a][j+a].square
+        count+=1
+    for a in range(1,8):
+        if (i + a) > 7 or (j - a) < 0 or myChessBoard[i+a][j-a].color == color:                                         #traversing southwest
+            break
+        if myChessBoard[i+a][j-a].piece != '0' and myChessBoard[i+a][j-a].color != color:
+            print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move southwest to take ' + myChessBoard[i+a][j-a].color + ' ' + myChessBoard[i+a][j-a].piece + '@' + myChessBoard[i+a][j-a].square
+            count+=1
+            break
+        print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move southwest to ' + myChessBoard[i+a][j-a].square
+        count+=1
+    for a in range (1,8):
+        if (i - a) < 0 or (j - a) < 0 or myChessBoard[i-a][j-a].color == color:                                         #traversing northwest
+            break
+        if myChessBoard[i-a][j-a].piece != '0' and myChessBoard[i-a][j-a].color != color:
+            print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move northwest to take ' + myChessBoard[i-a][j-a].color + ' ' + myChessBoard[i-a][j-a].piece + '@' + myChessBoard[i-a][j-a].square
+            count+=1
+            break
+        print str(count) + ': ' + color + ' queen@' + myChessBoard[i][j].square + ' move northwest to ' + myChessBoard[i-a][j-a].square
+        count+=1
     return
 def listKingMoves(myChessBoard, color, i, j):
     count = 1
@@ -178,11 +249,6 @@ def listMoves(myChessBoard, color):
                 listKingMoves(myChessBoard, color, i, j)
             else:
                 listPawnMoves(myChessBoard, color, i, j)
-
-
-
-
-
     return
 
 a1 = chessSquare('0','0','a1')

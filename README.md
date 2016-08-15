@@ -2,18 +2,35 @@
 
 Description: Lists out all available chess moves given state of the board,
 and player's turn (black or white). There is no accommodation for king in check,
-en passant, or castling.
+en passant, or castling at the moment.
 
+Important tips: 1. Do not modify the order of myChessBoard. You only have to
+                   modify arguments of object chessSquare to change the state of
+                   the board.
 
-Important tips: 1. Do not modify the order of myChessBoard.
+                2. Moving a piece from a1 to a8 on the board is going "north",
+                   and moving a piece from a1 to h1 on the board is going
+                   "east". This will be helpful in understanding the output.
 
+                3. The white chess pieces can only start at rows a1 and a2, and
+                   the white pawns can only move "north". The black pieces can
+                   only start at rows a8 and a7, and the black pawns can only
+                   move "south".
+
+                4. You only have to modify piece, and color parameters of
+                   chessSquare. Do not modify the square parameter!
+                   Piece argument is a string ('rook, 'knight', 'bishop',
+                   'queen', 'king', 'pawn'), and color argument is a character
+                   'w' for white or 'b' for black.
+
+                   Example: a1 = chessSquare('queen', 'b', 'a1')
 
 Function: listMoves(myChessBoard, color)
 
 Input:    myChessBoard array. Each element of array comprises of object
           chessSquare as shown below.
 
-          a1 = chessSquare(piece, color, square)
+          a1 = chessSquare('piece', 'color', 'square')
           .
           .
           .
@@ -27,3 +44,13 @@ Input:    myChessBoard array. Each element of array comprises of object
                         [a1,b1,c1,d1,e1,f1,g1,h1]]
 
           color is a one letter char either 'b' for black or 'w' for white.
+          color is the color of player's turn.
+
+Output:   The list of available moves for state of pieces on myChessBoard, and
+          the turn given by color parameter. Output will list out chess piece's
+          nth move, color of piece @ initial square, direction of movement, to
+          position of its final square.
+
+          Example:
+          3: w pawn@c2 move northwest to take b pawn@b3
+          1: w pawn@d2 move north to d3

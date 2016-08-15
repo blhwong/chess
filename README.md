@@ -4,7 +4,8 @@ Description: Lists out all available chess moves given state of the board,
 and player's turn (black or white). There is no accommodation for king in check,
 en passant, or castling at the moment.
 
-Important tips: 1. Do not modify the order of myChessBoard. You only have to
+Important tips:
+                1. Do not modify the order of myChessBoard. You only have to
                    modify arguments of object chessSquare to change the state of
                    the board.
 

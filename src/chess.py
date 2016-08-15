@@ -303,13 +303,13 @@ def listPawnMoves(myChessBoard, color, i, j):
             count+=1
             if i == 1:
                 if myChessBoard[i+2][j].piece == '0':
-                    print str(count) + ': ' + color + ' pawn@' + myChessBoard[i][j].square + ' move north to ' + myChessBoard[i+2][j].square
+                    print str(count) + ': ' + color + ' pawn@' + myChessBoard[i][j].square + ' move south to ' + myChessBoard[i+2][j].square
                     count+=1
         if (i + 1) < 8 and (j - 1) > -1 and myChessBoard[i+1][j-1].color != color and myChessBoard[i+1][j-1].piece != '0':                   #can take piece diagonal from pawn
             print str(count) + ': ' + color + ' pawn@' + myChessBoard[i][j].square + ' move southwest to take ' + myChessBoard[i+1][j-1].color + ' ' + myChessBoard[i+1][j-1].piece + '@' + myChessBoard[i+1][j-1].square
             count+=1
         if (i + 1) < 8 and (j + 1) < 8 and myChessBoard[i+1][j+1].color != color and myChessBoard[i+1][j+1].piece != '0':
-            print str(count) + ': ' + color + ' pawn@' + myChessBoard[i][j].square + ' move northeast to take ' + myChessBoard[i+1][j+1].color + ' ' + myChessBoard[i+1][j+1].piece + '@' + myChessBoard[i+1][j+1].square
+            print str(count) + ': ' + color + ' pawn@' + myChessBoard[i][j].square + ' move southeast to take ' + myChessBoard[i+1][j+1].color + ' ' + myChessBoard[i+1][j+1].piece + '@' + myChessBoard[i+1][j+1].square
             count+=1
     return
 
@@ -318,7 +318,6 @@ def listMoves(myChessBoard, color):
         for j in range(0,8):
             if myChessBoard[i][j].color != color:
                 continue
-            #print myChessBoard[i][j].piece
             if myChessBoard[i][j].piece == 'rook':
                 listRookMoves(myChessBoard, color, i, j)
             elif myChessBoard[i][j].piece == 'knight':
@@ -334,68 +333,75 @@ def listMoves(myChessBoard, color):
     return
 
 a1 = chessSquare('rook','w','a1')
-a2 = chessSquare('pawn','w','a2')
-a3 = chessSquare('0','0','a3')
-a4 = chessSquare('0','0','a4')
-a5 = chessSquare('0','0','a5')
-a6 = chessSquare('0','0','a6')
-a7 = chessSquare('pawn','b','a7')
-a8 = chessSquare('rook','b','a8')
 b1 = chessSquare('knight','w','b1')
-b2 = chessSquare('pawn','w','b2')
-b3 = chessSquare('0','0','b3')
-b4 = chessSquare('0','0','b4')
-b5 = chessSquare('0','0','b5')
-b6 = chessSquare('0','0','b6')
-b7 = chessSquare('pawn','b','b7')
-b8 = chessSquare('knight','b','b8')
 c1 = chessSquare('bishop','w','c1')
-c2 = chessSquare('pawn','w','c2')
-c3 = chessSquare('0','0','c3')
-c4 = chessSquare('0','0','c4')
-c5 = chessSquare('0','0','c5')
-c6 = chessSquare('0','0','c6')
-c7 = chessSquare('pawn','b','c7')
-c8 = chessSquare('bishop','b','c8')
 d1 = chessSquare('king','w','d1')
-d2 = chessSquare('pawn','w','d2')
-d3 = chessSquare('0','0','d3')
-d4 = chessSquare('0','0','d4')
-d5 = chessSquare('0','0','d5')
-d6 = chessSquare('0','0','d6')
-d7 = chessSquare('pawn','b','d7')
-d8 = chessSquare('king','b','d8')
 e1 = chessSquare('queen','w','e1')
-e2 = chessSquare('pawn','w','e2')
-e3 = chessSquare('0','0','e3')
-e4 = chessSquare('0','0','e4')
-e5 = chessSquare('0','0','e5')
-e6 = chessSquare('0','0','e6')
-e7 = chessSquare('pawn','b','e7')
-e8 = chessSquare('queen','b','e8')
 f1 = chessSquare('bishop','w','f1')
-f2 = chessSquare('pawn','w','f2')
-f3 = chessSquare('0','0','f3')
-f4 = chessSquare('0','0','f4')
-f5 = chessSquare('0','0','f5')
-f6 = chessSquare('0','0','f6')
-f7 = chessSquare('pawn','b','f7')
-f8 = chessSquare('bishop','b','f8')
 g1 = chessSquare('knight','w','g1')
-g2 = chessSquare('pawn','w','g2')
-g3 = chessSquare('0','0','g3')
-g4 = chessSquare('0','0','g4')
-g5 = chessSquare('0','0','g5')
-g6 = chessSquare('0','0','g6')
-g7 = chessSquare('pawn','b','g7')
-g8 = chessSquare('knight','b','g8')
 h1 = chessSquare('rook','w','h1')
+
+a2 = chessSquare('pawn','w','a2')
+b2 = chessSquare('pawn','w','b2')
+c2 = chessSquare('pawn','w','c2')
+d2 = chessSquare('pawn','w','d2')
+e2 = chessSquare('pawn','w','e2')
+f2 = chessSquare('pawn','w','f2')
+g2 = chessSquare('pawn','w','g2')
 h2 = chessSquare('pawn','w','h2')
+
+a3 = chessSquare('0','0','a3')
+b3 = chessSquare('0','0','b3')
+c3 = chessSquare('0','0','c3')
+d3 = chessSquare('0','0','d3')
+e3 = chessSquare('0','0','e3')
+f3 = chessSquare('0','0','f3')
+g3 = chessSquare('0','0','g3')
 h3 = chessSquare('0','0','h3')
+
+a4 = chessSquare('0','0','a4')
+b4 = chessSquare('0','0','b4')
+c4 = chessSquare('0','0','c4')
+d4 = chessSquare('0','0','d4')
+e4 = chessSquare('0','0','e4')
+f4 = chessSquare('0','0','f4')
+g4 = chessSquare('0','0','g4')
 h4 = chessSquare('0','0','h4')
+
+a5 = chessSquare('0','0','a5')
+b5 = chessSquare('0','0','b5')
+c5 = chessSquare('0','0','c5')
+d5 = chessSquare('0','0','d5')
+e5 = chessSquare('0','0','e5')
+f5 = chessSquare('0','0','f5')
+g5 = chessSquare('0','0','g5')
 h5 = chessSquare('0','0','h5')
+
+a6 = chessSquare('0','0','a6')
+b6 = chessSquare('0','0','b6')
+c6 = chessSquare('0','0','c6')
+d6 = chessSquare('0','0','d6')
+e6 = chessSquare('0','0','e6')
+f6 = chessSquare('0','0','f6')
+g6 = chessSquare('0','0','g6')
 h6 = chessSquare('0','0','h6')
+
+a7 = chessSquare('pawn','b','a7')
+b7 = chessSquare('pawn','b','b7')
+c7 = chessSquare('pawn','b','c7')
+d7 = chessSquare('pawn','b','d7')
+e7 = chessSquare('pawn','b','e7')
+f7 = chessSquare('pawn','b','f7')
+g7 = chessSquare('pawn','b','g7')
 h7 = chessSquare('pawn','b','h7')
+
+a8 = chessSquare('rook','b','a8')
+b8 = chessSquare('knight','b','b8')
+c8 = chessSquare('bishop','b','c8')
+d8 = chessSquare('king','b','d8')
+e8 = chessSquare('queen','b','e8')
+f8 = chessSquare('bishop','b','f8')
+g8 = chessSquare('knight','b','g8')
 h8 = chessSquare('rook','b','h8')
 
 myChessBoard=[[a8,b8,c8,d8,e8,f8,g8,h8],

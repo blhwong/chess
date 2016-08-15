@@ -1,11 +1,13 @@
 '''
 Created on Aug 11, 2016
+Modified on Aug 15, 2016
 
-@author: Brandon
+@author: Brandon Wong
 
 Description: Lists out all available chess moves given state of the board,
 and player's turn (black or white). There is no accommodation for king in check,
-en passant, or castling at the moment.
+en passant, or castling at the moment. The board is already set for initial
+states for all pieces.
 
 Important tips: 1. Do not modify the order of myChessBoard. You only have to
                    modify arguments of object chessSquare to change the state of
@@ -28,8 +30,7 @@ Important tips: 1. Do not modify the order of myChessBoard. You only have to
 
                    Example: a1 = chessSquare('queen', 'b', 'a1')
 
-Function: listMoves(myChessBoard, color)
-
+Function: listMoves(myChessBoard, color) located at the very bottom!
 Input:    myChessBoard array. Each element of array comprises of object
           chessSquare as shown below.
 
@@ -59,6 +60,9 @@ Output:   The list of available moves for state of pieces on myChessBoard, and
           1: w pawn@d2 move north to d3
 '''
 
+'''
+PLEASE DO NOT MODIFY CODE BELOW
+'''
 class chessSquare:
     def __init__(self, piece, color, square):
         self.piece = piece
@@ -391,7 +395,26 @@ def listMoves(myChessBoard, color):
             else:
                 listPawnMoves(myChessBoard, color, i, j)
     return
+'''
+PLEASE DO NOT MODIFY CODE ABOVE
+'''
 
+'''
+The board is already set for initial states for all pieces.
+MODIFY STATE OF CHESSBOARD BELOW
+square = chessSquare('piece', 'color', 'square')
+modify by changing piece, and color parameter only. Do not change square parameter.
+
+Here is the order of the board for your reference:
+[a8,b8,c8,d8,e8,f8,g8,h8],
+[a7,b7,c7,d7,e7,f7,g7,h7],
+[a6,b6,c6,d6,e6,f6,g6,h6],
+[a5,b5,c5,d5,e5,f5,g5,h5],
+[a4,b4,c4,d4,e4,f4,g4,h4],
+[a3,b3,c3,d3,e3,f3,g3,h3],
+[a2,b2,c2,d2,e2,f2,g2,h2],
+[a1,b1,c1,d1,e1,f1,g1,h1]
+'''
 a1 = chessSquare('rook','w','a1')
 b1 = chessSquare('knight','w','b1')
 c1 = chessSquare('bishop','w','c1')
@@ -463,8 +486,24 @@ e8 = chessSquare('queen','b','e8')
 f8 = chessSquare('bishop','b','f8')
 g8 = chessSquare('knight','b','g8')
 h8 = chessSquare('rook','b','h8')
+'''
+The board is already set for initial states for all pieces.
+MODIFY STATE OF CHESSBOARD ABOVE
+square = chessSquare('piece', 'color', 'square')
+modify by changing piece, and color parameter only. Do not change square parameter.
 
-myChessBoard=[[a8,b8,c8,d8,e8,f8,g8,h8],
+Here is the order of the board for your reference:
+[a8,b8,c8,d8,e8,f8,g8,h8],
+[a7,b7,c7,d7,e7,f7,g7,h7],
+[a6,b6,c6,d6,e6,f6,g6,h6],
+[a5,b5,c5,d5,e5,f5,g5,h5],
+[a4,b4,c4,d4,e4,f4,g4,h4],
+[a3,b3,c3,d3,e3,f3,g3,h3],
+[a2,b2,c2,d2,e2,f2,g2,h2],
+[a1,b1,c1,d1,e1,f1,g1,h1]
+'''
+
+myChessBoard=[[a8,b8,c8,d8,e8,f8,g8,h8],            #PLEASE DO NOT MODIFY ORDER OF ELEMENTS IN myChessBoard
               [a7,b7,c7,d7,e7,f7,g7,h7],
               [a6,b6,c6,d6,e6,f6,g6,h6],
               [a5,b5,c5,d5,e5,f5,g5,h5],
@@ -473,4 +512,10 @@ myChessBoard=[[a8,b8,c8,d8,e8,f8,g8,h8],
               [a2,b2,c2,d2,e2,f2,g2,h2],
               [a1,b1,c1,d1,e1,f1,g1,h1]]
 
+'''
+Function: listMoves(myChessBoard, color)
+Inputs:   myChessBoard- (do not have to change argument)
+          color - player's turn ('b' for black; 'w' for white)
+More details in the comments at the very beginning!
+'''
 listMoves(myChessBoard,'w')
